@@ -1,0 +1,36 @@
+{
+	"folders": [
+		{
+			"path": ".devcontainer"
+		},
+		{
+			"path": "api"
+		},
+		{
+			"path": "web"
+		},
+		{
+			"path": "wiki"
+		},
+		{
+			"path": "README.md"
+		},
+	],
+	"settings": {
+		"git.openRepositoryInParentFolders": "always"
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [],
+		"compounds": [
+			{
+				"name": "Website + API",
+				"configurations": [
+					"API",
+					"Website"
+				],
+				"stopAll": true
+			}
+		]
+	}
+}

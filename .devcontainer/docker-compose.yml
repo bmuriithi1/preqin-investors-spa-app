@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  preqinapp.dev:
+    container_name: preqinapp.dev
+    build:
+      dockerfile: ".devcontainer/Dockerfile"
+      context: ".."
+    network_mode: bridge
+    volumes:
+      - ..:/workspace
+    command: 'sleep infinity'
