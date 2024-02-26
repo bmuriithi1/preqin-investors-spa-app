@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "API",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "cwd": "${workspaceFolder}/..",
+            "args": [
+                "api.main:app",
+                "--reload",
+                "--port",
+                "5000"
+            ],
+            "env": {
+                "ALLOWED_ORIGINS": "http://localhost:5173,http://127.0.0.1:5173,http://localhost:8000",
+                "API_USERNAME": "",
+                "API_PASSWORD": "",
+		        "ENABLE_OPENPAI_SCHEMA": "true",
+                "PREQIN_API_ENDPOINT": "http://172.18.0.2:8000",
+                //"PREQIN_API_ENDPOINT": "http://stupefied_vaughan:8000",
+                //"PREQIN_API_ENDPOINT": "http://localhost:8000",
+            },
+	    "jinja": false
+        }
+    ]
+}
