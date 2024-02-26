@@ -1,26 +1,26 @@
 # Overview
 Application to fetch relevant investor and investor commitment data from Preqin APIs and display it on a SPA web app, following instructions in the [Preqin Take home task PDF document](./wiki/docs/Technical%20interview%20instructions%20and%20format.pdf)
 
-The front-end is setup using Vite (Vue.js + TypeScript) and the backend is set up using FastAPI to fetch Preqin investor data and send it back to the front-end. 
+The front-end is setup using Vite (Vue.js + JavaScript) and the back-end is set up using FastAPI to fetch Preqin investor data and send it back to the front-end. 
 
-The development environment is contained using Docker. Follow instructions below to set up and run the project locally.
+The development environment is containerised using Docker. Follow instructions below to set up and run the project locally.
 
 # Setting up the project locally
 
 ## Setting up the Preqin APIs locally
 - Clone the repository https://github.com/JayGadi/preqin-technical-test locally 
-- Follow instructions in the README to stand up the Preqin API server locally
+- Follow instructions in the README to stand up the Preqin API server locally using Docker
 
 ## Setting up the containerised development environment.
 - Install Docker and VSCode and clone this project locally.
-- Add extension DevContainers to your VSCode.
+- Add extension DevContainers to your VSCode IDE.
 - From the project repo, open the **workspace.code-workspace** file with VSCode.
 - VSCode should prompt you to open the repository within a container. Do this.
     - If it doesn't, press `F1`, look for **Dev Containers: Open Workspace in Container...** and select the **workspace.code-workspace** file.
     - See the [VSCode DevContainers docs](https://code.visualstudio.com/docs/devcontainers/containers#_quick-start-open-an-existing-folder-in-a-container) for more info on DevContainers if unfamiliar with them.
-- VSCode should successfully build the required containers for the project, setting up relevant virtual environments in the projecss.
+- VSCode should successfully build the containerised development environemnt for the project.
 
-> NOTE: To connect to the Preqin APIs, the development container is mounted on the default docker network 'bridge' which should be the same network as the local APIs. To connect to the Preqin APIs locally, the Preqin Docker container's IPv4 address was used as requests were failing with http://localhost:8000 for some reason, even though the docs were accessible OK. Something to look into.
+> NOTE: To connect to the Preqin APIs, the development container is mounted on the default docker network 'bridge' (see docker-compose) which should be the same network as the local APIs. To connect to the Preqin APIs locally, the Preqin Docker container's IPv4 address (see launch target definition) was used as requests were failing with http://localhost:8000 for some reason, even though the Swagger docs are accessible once the container is spun up. Something to look into.
 
 ## Setting up the website locally
 - Once in the docker container **preqinapp.dev** within VS Code, open a bash terminal and navigate to the **web** folder.
@@ -72,12 +72,3 @@ This is a list of future considerations to improve the application, and deployme
 - Documentation 
     - Maintain version-controlled wikis, architecture diagrams, etc
     - Document styling conventions, CI/CD processes, release process, etc.
-
-
-
-
-
-
-
-
-
