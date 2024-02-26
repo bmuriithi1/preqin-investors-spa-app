@@ -55,6 +55,9 @@ This is a list of future considerations to improve the application, and deployme
 
 - Back-end improvements
     - Set up OAuth2 token auth using JWT/python-jose/FastAPI (auth endpoints currently don't do anything)
+    - Add more tests for API routes and methods within the API folder
+    - Set up linting (have already done type-checking and code formatting)
+        - More tricky because of linters like pylint are very opinionated and offer lots of false positives.
 
 - Deployment considerations
     - Add CI pipeline to create build artifacts and perform code checks
